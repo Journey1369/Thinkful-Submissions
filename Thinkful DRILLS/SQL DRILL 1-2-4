@@ -1,0 +1,43 @@
+SELECT
+	Date,
+    MAX(maxtemperaturef) as Hotness
+FROM
+    weather
+GROUP by 
+	date
+Order by
+	MAX(maxtemperaturef)
+	DESC
+	LIMIT 1
+;
+
+SELECT
+    start_station,  
+    COUNT(*) as Count_of_Start_Station
+FROM
+    trips
+GROUP by 1
+;
+
+SELECT
+	trip_id,
+    MIN(duration) as travel_duration
+FROM
+    trips
+GROUP by 
+	trip_id
+Order by 
+	travel_duration
+	DESC
+Limit 1
+;
+
+SELECT
+	end_station,
+	Round(AVG(duration),0)
+FROM
+	trips
+GROUP by 
+	end_station
+;
+
